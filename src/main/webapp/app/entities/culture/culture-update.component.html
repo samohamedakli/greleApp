@@ -1,0 +1,179 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-culture-heading">Create or edit a Culture</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!culture.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="culture.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_idRisque">Id Risque</label>
+                    <input type="number" class="form-control" name="idRisque" id="field_idRisque"
+                        [(ngModel)]="culture.idRisque" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_idCulture">Id Culture</label>
+                    <input type="number" class="form-control" name="idCulture" id="field_idCulture"
+                        [(ngModel)]="culture.idCulture" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numOrdre">Num Ordre</label>
+                    <input type="number" class="form-control" name="numOrdre" id="field_numOrdre"
+                        [(ngModel)]="culture.numOrdre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_classeNatureCLT">Classe Nature CLT</label>
+                    <input type="number" class="form-control" name="classeNatureCLT" id="field_classeNatureCLT"
+                        [(ngModel)]="culture.classeNatureCLT" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_natureCulture">Nature Culture</label>
+                    <input type="text" class="form-control" name="natureCulture" id="field_natureCulture"
+                        [(ngModel)]="culture.natureCulture" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_codeCaracteristique">Code Caracteristique</label>
+                    <input type="text" class="form-control" name="codeCaracteristique" id="field_codeCaracteristique"
+                        [(ngModel)]="culture.codeCaracteristique" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_libelleCaracteristique">Libelle Caracteristique</label>
+                    <input type="text" class="form-control" name="libelleCaracteristique" id="field_libelleCaracteristique"
+                        [(ngModel)]="culture.libelleCaracteristique" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixOfficiel">Prix Officiel</label>
+                    <input type="number" class="form-control" name="prixOfficiel" id="field_prixOfficiel"
+                        [(ngModel)]="culture.prixOfficiel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_uniteMesure">Unite Mesure</label>
+                    <input type="text" class="form-control" name="uniteMesure" id="field_uniteMesure"
+                        [(ngModel)]="culture.uniteMesure" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_superficie">Superficie</label>
+                    <input type="number" class="form-control" name="superficie" id="field_superficie"
+                        [(ngModel)]="culture.superficie" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_superficieExpl">Superficie Expl</label>
+                    <input type="number" class="form-control" name="superficieExpl" id="field_superficieExpl"
+                        [(ngModel)]="culture.superficieExpl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_uniteSuperficie">Unite Superficie</label>
+                    <input type="text" class="form-control" name="uniteSuperficie" id="field_uniteSuperficie"
+                        [(ngModel)]="culture.uniteSuperficie" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nbParcelles">Nb Parcelles</label>
+                    <input type="number" class="form-control" name="nbParcelles" id="field_nbParcelles"
+                        [(ngModel)]="culture.nbParcelles" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cultureirriguee">Cultureirriguee</label>
+                    <input type="checkbox" class="form-control" name="cultureirriguee" id="field_cultureirriguee"
+                        [(ngModel)]="culture.cultureirriguee" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rendementMoyen">Rendement Moyen</label>
+                    <input type="number" class="form-control" name="rendementMoyen" id="field_rendementMoyen"
+                        [(ngModel)]="culture.rendementMoyen" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixMoyen">Prix Moyen</label>
+                    <input type="number" class="form-control" name="prixMoyen" id="field_prixMoyen"
+                        [(ngModel)]="culture.prixMoyen" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixAutre">Prix Autre</label>
+                    <input type="number" class="form-control" name="prixAutre" id="field_prixAutre"
+                        [(ngModel)]="culture.prixAutre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixRetenu">Prix Retenu</label>
+                    <input type="number" class="form-control" name="prixRetenu" id="field_prixRetenu"
+                        [(ngModel)]="culture.prixRetenu" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rendementN1">Rendement N 1</label>
+                    <input type="number" class="form-control" name="rendementN1" id="field_rendementN1"
+                        [(ngModel)]="culture.rendementN1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rendementN2">Rendement N 2</label>
+                    <input type="number" class="form-control" name="rendementN2" id="field_rendementN2"
+                        [(ngModel)]="culture.rendementN2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rendementN3">Rendement N 3</label>
+                    <input type="number" class="form-control" name="rendementN3" id="field_rendementN3"
+                        [(ngModel)]="culture.rendementN3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rendementN4">Rendement N 4</label>
+                    <input type="number" class="form-control" name="rendementN4" id="field_rendementN4"
+                        [(ngModel)]="culture.rendementN4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rendementN5">Rendement N 5</label>
+                    <input type="number" class="form-control" name="rendementN5" id="field_rendementN5"
+                        [(ngModel)]="culture.rendementN5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixUnitaire1">Prix Unitaire 1</label>
+                    <input type="number" class="form-control" name="prixUnitaire1" id="field_prixUnitaire1"
+                        [(ngModel)]="culture.prixUnitaire1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixUnitaire2">Prix Unitaire 2</label>
+                    <input type="number" class="form-control" name="prixUnitaire2" id="field_prixUnitaire2"
+                        [(ngModel)]="culture.prixUnitaire2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixUnitaire3">Prix Unitaire 3</label>
+                    <input type="number" class="form-control" name="prixUnitaire3" id="field_prixUnitaire3"
+                        [(ngModel)]="culture.prixUnitaire3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixUnitaire4">Prix Unitaire 4</label>
+                    <input type="number" class="form-control" name="prixUnitaire4" id="field_prixUnitaire4"
+                        [(ngModel)]="culture.prixUnitaire4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixUnitaire5">Prix Unitaire 5</label>
+                    <input type="number" class="form-control" name="prixUnitaire5" id="field_prixUnitaire5"
+                        [(ngModel)]="culture.prixUnitaire5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_motifAutrePrix">Motif Autre Prix</label>
+                    <input type="text" class="form-control" name="motifAutrePrix" id="field_motifAutrePrix"
+                        [(ngModel)]="culture.motifAutrePrix" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_majEnAttente">Maj En Attente</label>
+                    <input type="checkbox" class="form-control" name="majEnAttente" id="field_majEnAttente"
+                        [(ngModel)]="culture.majEnAttente" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_absenceCultureAvenir">Absence Culture Avenir</label>
+                    <input type="checkbox" class="form-control" name="absenceCultureAvenir" id="field_absenceCultureAvenir"
+                        [(ngModel)]="culture.absenceCultureAvenir" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

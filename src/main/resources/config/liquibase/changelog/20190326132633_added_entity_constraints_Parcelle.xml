@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Parcelle.
+    -->
+    <changeSet id="20190326132633-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="culture_id"
+                                 baseTableName="parcelle"
+                                 constraintName="fk_parcelle_culture_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="culture"/>
+
+        <addForeignKeyConstraint baseColumnNames="localisation_id"
+                                 baseTableName="parcelle"
+                                 constraintName="fk_parcelle_localisation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="localisation"/>
+
+    </changeSet>
+</databaseChangeLog>

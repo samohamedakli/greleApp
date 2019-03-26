@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-garantie-heading">Create or edit a Garantie</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!garantie.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="garantie.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_codeGarantie">Code Garantie</label>
+                    <input type="number" class="form-control" name="codeGarantie" id="field_codeGarantie"
+                        [(ngModel)]="garantie.codeGarantie" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_libelleGarantie">Libelle Garantie</label>
+                    <input type="text" class="form-control" name="libelleGarantie" id="field_libelleGarantie"
+                        [(ngModel)]="garantie.libelleGarantie" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeFranchise">Type Franchise</label>
+                    <input type="text" class="form-control" name="typeFranchise" id="field_typeFranchise"
+                        [(ngModel)]="garantie.typeFranchise" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tauxFranchise">Taux Franchise</label>
+                    <input type="number" class="form-control" name="tauxFranchise" id="field_tauxFranchise"
+                        [(ngModel)]="garantie.tauxFranchise" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_culture">Culture</label>
+                    <select class="form-control" id="field_culture" name="culture" [(ngModel)]="garantie.culture" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cultureOption.id === garantie.culture?.id ? garantie.culture : cultureOption" *ngFor="let cultureOption of cultures; trackBy: trackCultureById">{{cultureOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

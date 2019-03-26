@@ -1,0 +1,153 @@
+{
+    "name": "Culture",
+    "fields": [
+        {
+            "fieldName": "idRisque",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "idCulture",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numOrdre",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "classeNatureCLT",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "natureCulture",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeCaracteristique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "libelleCaracteristique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prixOfficiel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "uniteMesure",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "superficie",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "superficieExpl",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "uniteSuperficie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nbParcelles",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cultureirriguee",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "rendementMoyen",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixMoyen",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixAutre",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixRetenu",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "rendementN1",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "rendementN2",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "rendementN3",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "rendementN4",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "rendementN5",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "prixUnitaire1",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixUnitaire2",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixUnitaire3",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixUnitaire4",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "prixUnitaire5",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "motifAutrePrix",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "majEnAttente",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "absenceCultureAvenir",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "parcelle",
+            "otherEntityRelationshipName": "culture",
+            "relationshipName": "parcelle"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "garantie",
+            "otherEntityRelationshipName": "culture",
+            "relationshipName": "garantie"
+        }
+    ],
+    "changelogDate": "20190326132632",
+    "javadoc": "The Culture entity.",
+    "entityTableName": "culture",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

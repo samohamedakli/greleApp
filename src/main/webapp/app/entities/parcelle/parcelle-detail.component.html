@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="parcelle">
+            <h2><span>Parcelle</span> {{parcelle.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Id Risque</span></dt>
+                <dd>
+                    <span>{{parcelle.idRisque}}</span>
+                </dd>
+                <dt><span>Id Parcelle</span></dt>
+                <dd>
+                    <span>{{parcelle.idParcelle}}</span>
+                </dd>
+                <dt><span>Num Ordre</span></dt>
+                <dd>
+                    <span>{{parcelle.numOrdre}}</span>
+                </dd>
+                <dt><span>Code Postal</span></dt>
+                <dd>
+                    <span>{{parcelle.codePostal}}</span>
+                </dd>
+                <dt><span>Libelle Commune</span></dt>
+                <dd>
+                    <span>{{parcelle.libelleCommune}}</span>
+                </dd>
+                <dt><span>Lieudit</span></dt>
+                <dd>
+                    <span>{{parcelle.lieudit}}</span>
+                </dd>
+                <dt><span>Superficie</span></dt>
+                <dd>
+                    <span>{{parcelle.superficie}}</span>
+                </dd>
+                <dt><span>Rendement</span></dt>
+                <dd>
+                    <span>{{parcelle.rendement}}</span>
+                </dd>
+                <dt><span>Prix Unitaire</span></dt>
+                <dd>
+                    <span>{{parcelle.prixUnitaire}}</span>
+                </dd>
+                <dt><span>Taux Cotisation Grele</span></dt>
+                <dd>
+                    <span>{{parcelle.tauxCotisationGrele}}</span>
+                </dd>
+                <dt><span>Taux Cotisation Arc</span></dt>
+                <dd>
+                    <span>{{parcelle.tauxCotisationArc}}</span>
+                </dd>
+                <dt><span>Culture</span></dt>
+                <dd>
+                    <div *ngIf="parcelle.culture">
+                        <a [routerLink]="['/culture', parcelle.culture?.id, 'view']">{{parcelle.culture?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Localisation</span></dt>
+                <dd>
+                    <div *ngIf="parcelle.localisation">
+                        <a [routerLink]="['/localisation', parcelle.localisation?.id, 'view']">{{parcelle.localisation?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/parcelle', parcelle.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

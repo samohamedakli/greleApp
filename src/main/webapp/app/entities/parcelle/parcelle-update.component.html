@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-parcelle-heading">Create or edit a Parcelle</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!parcelle.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="parcelle.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_idRisque">Id Risque</label>
+                    <input type="number" class="form-control" name="idRisque" id="field_idRisque"
+                        [(ngModel)]="parcelle.idRisque" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_idParcelle">Id Parcelle</label>
+                    <input type="number" class="form-control" name="idParcelle" id="field_idParcelle"
+                        [(ngModel)]="parcelle.idParcelle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numOrdre">Num Ordre</label>
+                    <input type="number" class="form-control" name="numOrdre" id="field_numOrdre"
+                        [(ngModel)]="parcelle.numOrdre" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_codePostal">Code Postal</label>
+                    <input type="number" class="form-control" name="codePostal" id="field_codePostal"
+                        [(ngModel)]="parcelle.codePostal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_libelleCommune">Libelle Commune</label>
+                    <input type="text" class="form-control" name="libelleCommune" id="field_libelleCommune"
+                        [(ngModel)]="parcelle.libelleCommune" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lieudit">Lieudit</label>
+                    <input type="text" class="form-control" name="lieudit" id="field_lieudit"
+                        [(ngModel)]="parcelle.lieudit" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_superficie">Superficie</label>
+                    <input type="number" class="form-control" name="superficie" id="field_superficie"
+                        [(ngModel)]="parcelle.superficie" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rendement">Rendement</label>
+                    <input type="number" class="form-control" name="rendement" id="field_rendement"
+                        [(ngModel)]="parcelle.rendement" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixUnitaire">Prix Unitaire</label>
+                    <input type="number" class="form-control" name="prixUnitaire" id="field_prixUnitaire"
+                        [(ngModel)]="parcelle.prixUnitaire" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tauxCotisationGrele">Taux Cotisation Grele</label>
+                    <input type="number" class="form-control" name="tauxCotisationGrele" id="field_tauxCotisationGrele"
+                        [(ngModel)]="parcelle.tauxCotisationGrele" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tauxCotisationArc">Taux Cotisation Arc</label>
+                    <input type="number" class="form-control" name="tauxCotisationArc" id="field_tauxCotisationArc"
+                        [(ngModel)]="parcelle.tauxCotisationArc" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_culture">Culture</label>
+                    <select class="form-control" id="field_culture" name="culture" [(ngModel)]="parcelle.culture" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cultureOption.id === parcelle.culture?.id ? parcelle.culture : cultureOption" *ngFor="let cultureOption of cultures; trackBy: trackCultureById">{{cultureOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_localisation">Localisation</label>
+                    <select class="form-control" id="field_localisation" name="localisation" [(ngModel)]="parcelle.localisation">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="localisationOption.id === parcelle.localisation?.id ? parcelle.localisation : localisationOption" *ngFor="let localisationOption of localisations; trackBy: trackLocalisationById">{{localisationOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

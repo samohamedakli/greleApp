@@ -40,6 +40,12 @@ public class CacheConfiguration {
             cm.createCache(com.aviva.agriculture.grele.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.aviva.agriculture.grele.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(com.aviva.agriculture.grele.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
+            cm.createCache(com.aviva.agriculture.grele.domain.Localisation.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aviva.agriculture.grele.domain.Culture.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aviva.agriculture.grele.domain.Culture.class.getName() + ".parcelles", jcacheConfiguration);
+            cm.createCache(com.aviva.agriculture.grele.domain.Culture.class.getName() + ".garanties", jcacheConfiguration);
+            cm.createCache(com.aviva.agriculture.grele.domain.Parcelle.class.getName(), jcacheConfiguration);
+            cm.createCache(com.aviva.agriculture.grele.domain.Garantie.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
