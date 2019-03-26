@@ -1,0 +1,127 @@
+
+
+
+// an ignored comment
+/** not an ignored comment */
+entity Localisation {
+	Address String,
+	CodePostal String,
+	Ville String,
+	LieuDit String
+}
+
+
+
+/**
+ * The Culture entity.
+ */
+entity Culture {	
+	idRisque Long,
+    idCulture Long,
+    numOrdre Integer,
+    classeNatureCLT Integer,
+    natureCulture String,
+    codeCaracteristique String,
+    libelleCaracteristique String,
+    prixOfficiel Double,
+    uniteMesure String,
+    superficie Long,
+    superficieExpl Long,
+    uniteSuperficie String,
+    nbParcelles Integer,
+    cultureirriguee Boolean,
+    rendementMoyen Double,
+    prixMoyen Double,
+    prixAutre Double,
+    prixRetenu Double,
+    rendementN1 BigDecimal,
+    rendementN2 BigDecimal,
+    rendementN3 BigDecimal,
+    rendementN4 BigDecimal,
+    rendementN5 BigDecimal,
+    prixUnitaire1 Double, 
+    prixUnitaire2 Double,
+    prixUnitaire3 Double,
+    prixUnitaire4 Double,
+    prixUnitaire5 Double,
+	motifAutrePrix String,
+    majEnAttente Boolean,
+    absenceCultureAvenir Boolean    
+}
+
+/**
+ * The Parcelle entity.
+ */
+entity Parcelle {	
+	idRisque Long,
+    idParcelle Long,
+    numOrdre Integer,
+    codePostal Long,
+    libelleCommune String,
+    lieudit String,
+    superficie Long,
+    rendementBigdecimal,
+    prixUnitaire Double, 
+    tauxCotisationGrele BigDecimal,
+    tauxCotisationArc BigDecimal   
+}
+
+entity Garantie {
+	codeGarantie Integer,
+    libelleGarantie String,
+    typeFranchise String,
+    tauxFranchise Integer
+}
+
+
+
+relationship OneToMany {
+	Culture{Parcelle} to Parcelle
+}
+relationship OneToMany {
+	Culture{Garantie} to Garantie
+}
+
+
+relationship OneToOne {
+	Parcelle{Localisation} to Localisation
+}
+
+
+// defining multiple OneToMany relationships with comments
+/*relationship OneToMany {
+//	Employee{job} to Job,
+	/**
+	* A relationship
+	*/
+//	Department{employee} to
+	/**
+	* Another side of the same relationship
+	*/
+//	Employee
+//}
+
+//relationship ManyToOne {
+	//Employee{manager} to Employee
+//}
+
+// defining multiple oneToOne relationships
+//relationship OneToOne {
+//	JobHistory{job} to Job,
+//	JobHistory{department} to Department,
+//	JobHistory{employee} to Employee
+//}
+
+// Set pagination options
+paginate Culture with infinite-scroll
+//paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl except Employee, Job
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
