@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="garantie">
+            <h2><span>Garantie</span> {{garantie.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Code Garantie</span></dt>
+                <dd>
+                    <span>{{garantie.codeGarantie}}</span>
+                </dd>
+                <dt><span>Libelle Garantie</span></dt>
+                <dd>
+                    <span>{{garantie.libelleGarantie}}</span>
+                </dd>
+                <dt><span>Type Franchise</span></dt>
+                <dd>
+                    <span>{{garantie.typeFranchise}}</span>
+                </dd>
+                <dt><span>Taux Franchise</span></dt>
+                <dd>
+                    <span>{{garantie.tauxFranchise}}</span>
+                </dd>
+                <dt><span>Culture</span></dt>
+                <dd>
+                    <div *ngIf="garantie.culture">
+                        <a [routerLink]="['/culture', garantie.culture?.id, 'view']">{{garantie.culture?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/garantie', garantie.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

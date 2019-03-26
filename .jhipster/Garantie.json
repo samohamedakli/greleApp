@@ -1,0 +1,38 @@
+{
+    "name": "Garantie",
+    "fields": [
+        {
+            "fieldName": "codeGarantie",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "libelleGarantie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeFranchise",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tauxFranchise",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "culture",
+            "otherEntityName": "culture",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190326132634",
+    "entityTableName": "garantie",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

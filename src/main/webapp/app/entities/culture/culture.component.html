@@ -1,0 +1,114 @@
+<div>
+    <h2 id="page-heading">
+        <span>Cultures</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-culture" [routerLink]="['/culture/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Culture
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="cultures">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="idRisque"><span>Id Risque</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="idCulture"><span>Id Culture</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numOrdre"><span>Num Ordre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="classeNatureCLT"><span>Classe Nature CLT</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="natureCulture"><span>Nature Culture</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codeCaracteristique"><span>Code Caracteristique</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="libelleCaracteristique"><span>Libelle Caracteristique</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixOfficiel"><span>Prix Officiel</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="uniteMesure"><span>Unite Mesure</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="superficie"><span>Superficie</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="superficieExpl"><span>Superficie Expl</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="uniteSuperficie"><span>Unite Superficie</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nbParcelles"><span>Nb Parcelles</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cultureirriguee"><span>Cultureirriguee</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rendementMoyen"><span>Rendement Moyen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixMoyen"><span>Prix Moyen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixAutre"><span>Prix Autre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixRetenu"><span>Prix Retenu</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rendementN1"><span>Rendement N 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rendementN2"><span>Rendement N 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rendementN3"><span>Rendement N 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rendementN4"><span>Rendement N 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rendementN5"><span>Rendement N 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixUnitaire1"><span>Prix Unitaire 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixUnitaire2"><span>Prix Unitaire 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixUnitaire3"><span>Prix Unitaire 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixUnitaire4"><span>Prix Unitaire 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prixUnitaire5"><span>Prix Unitaire 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="motifAutrePrix"><span>Motif Autre Prix</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="majEnAttente"><span>Maj En Attente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="absenceCultureAvenir"><span>Absence Culture Avenir</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let culture of cultures ;trackBy: trackId">
+                <td><a [routerLink]="['/culture', culture.id, 'view' ]">{{culture.id}}</a></td>
+                <td>{{culture.idRisque}}</td>
+                <td>{{culture.idCulture}}</td>
+                <td>{{culture.numOrdre}}</td>
+                <td>{{culture.classeNatureCLT}}</td>
+                <td>{{culture.natureCulture}}</td>
+                <td>{{culture.codeCaracteristique}}</td>
+                <td>{{culture.libelleCaracteristique}}</td>
+                <td>{{culture.prixOfficiel}}</td>
+                <td>{{culture.uniteMesure}}</td>
+                <td>{{culture.superficie}}</td>
+                <td>{{culture.superficieExpl}}</td>
+                <td>{{culture.uniteSuperficie}}</td>
+                <td>{{culture.nbParcelles}}</td>
+                <td>{{culture.cultureirriguee}}</td>
+                <td>{{culture.rendementMoyen}}</td>
+                <td>{{culture.prixMoyen}}</td>
+                <td>{{culture.prixAutre}}</td>
+                <td>{{culture.prixRetenu}}</td>
+                <td>{{culture.rendementN1}}</td>
+                <td>{{culture.rendementN2}}</td>
+                <td>{{culture.rendementN3}}</td>
+                <td>{{culture.rendementN4}}</td>
+                <td>{{culture.rendementN5}}</td>
+                <td>{{culture.prixUnitaire1}}</td>
+                <td>{{culture.prixUnitaire2}}</td>
+                <td>{{culture.prixUnitaire3}}</td>
+                <td>{{culture.prixUnitaire4}}</td>
+                <td>{{culture.prixUnitaire5}}</td>
+                <td>{{culture.motifAutrePrix}}</td>
+                <td>{{culture.majEnAttente}}</td>
+                <td>{{culture.absenceCultureAvenir}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/culture', culture.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/culture', culture.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'culture', { outlets: { popup: culture.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+{
+    "name": "Parcelle",
+    "fields": [
+        {
+            "fieldName": "idRisque",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "idParcelle",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numOrdre",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "codePostal",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "libelleCommune",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lieudit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "superficie",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "rendement",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "prixUnitaire",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tauxCotisationGrele",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "tauxCotisationArc",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "culture",
+            "otherEntityName": "culture",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "localisation",
+            "otherEntityRelationshipName": "parcelle",
+            "relationshipName": "localisation",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190326132633",
+    "javadoc": "The Parcelle entity.",
+    "entityTableName": "parcelle",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

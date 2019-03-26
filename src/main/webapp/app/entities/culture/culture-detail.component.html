@@ -1,0 +1,147 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="culture">
+            <h2><span>Culture</span> {{culture.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Id Risque</span></dt>
+                <dd>
+                    <span>{{culture.idRisque}}</span>
+                </dd>
+                <dt><span>Id Culture</span></dt>
+                <dd>
+                    <span>{{culture.idCulture}}</span>
+                </dd>
+                <dt><span>Num Ordre</span></dt>
+                <dd>
+                    <span>{{culture.numOrdre}}</span>
+                </dd>
+                <dt><span>Classe Nature CLT</span></dt>
+                <dd>
+                    <span>{{culture.classeNatureCLT}}</span>
+                </dd>
+                <dt><span>Nature Culture</span></dt>
+                <dd>
+                    <span>{{culture.natureCulture}}</span>
+                </dd>
+                <dt><span>Code Caracteristique</span></dt>
+                <dd>
+                    <span>{{culture.codeCaracteristique}}</span>
+                </dd>
+                <dt><span>Libelle Caracteristique</span></dt>
+                <dd>
+                    <span>{{culture.libelleCaracteristique}}</span>
+                </dd>
+                <dt><span>Prix Officiel</span></dt>
+                <dd>
+                    <span>{{culture.prixOfficiel}}</span>
+                </dd>
+                <dt><span>Unite Mesure</span></dt>
+                <dd>
+                    <span>{{culture.uniteMesure}}</span>
+                </dd>
+                <dt><span>Superficie</span></dt>
+                <dd>
+                    <span>{{culture.superficie}}</span>
+                </dd>
+                <dt><span>Superficie Expl</span></dt>
+                <dd>
+                    <span>{{culture.superficieExpl}}</span>
+                </dd>
+                <dt><span>Unite Superficie</span></dt>
+                <dd>
+                    <span>{{culture.uniteSuperficie}}</span>
+                </dd>
+                <dt><span>Nb Parcelles</span></dt>
+                <dd>
+                    <span>{{culture.nbParcelles}}</span>
+                </dd>
+                <dt><span>Cultureirriguee</span></dt>
+                <dd>
+                    <span>{{culture.cultureirriguee}}</span>
+                </dd>
+                <dt><span>Rendement Moyen</span></dt>
+                <dd>
+                    <span>{{culture.rendementMoyen}}</span>
+                </dd>
+                <dt><span>Prix Moyen</span></dt>
+                <dd>
+                    <span>{{culture.prixMoyen}}</span>
+                </dd>
+                <dt><span>Prix Autre</span></dt>
+                <dd>
+                    <span>{{culture.prixAutre}}</span>
+                </dd>
+                <dt><span>Prix Retenu</span></dt>
+                <dd>
+                    <span>{{culture.prixRetenu}}</span>
+                </dd>
+                <dt><span>Rendement N 1</span></dt>
+                <dd>
+                    <span>{{culture.rendementN1}}</span>
+                </dd>
+                <dt><span>Rendement N 2</span></dt>
+                <dd>
+                    <span>{{culture.rendementN2}}</span>
+                </dd>
+                <dt><span>Rendement N 3</span></dt>
+                <dd>
+                    <span>{{culture.rendementN3}}</span>
+                </dd>
+                <dt><span>Rendement N 4</span></dt>
+                <dd>
+                    <span>{{culture.rendementN4}}</span>
+                </dd>
+                <dt><span>Rendement N 5</span></dt>
+                <dd>
+                    <span>{{culture.rendementN5}}</span>
+                </dd>
+                <dt><span>Prix Unitaire 1</span></dt>
+                <dd>
+                    <span>{{culture.prixUnitaire1}}</span>
+                </dd>
+                <dt><span>Prix Unitaire 2</span></dt>
+                <dd>
+                    <span>{{culture.prixUnitaire2}}</span>
+                </dd>
+                <dt><span>Prix Unitaire 3</span></dt>
+                <dd>
+                    <span>{{culture.prixUnitaire3}}</span>
+                </dd>
+                <dt><span>Prix Unitaire 4</span></dt>
+                <dd>
+                    <span>{{culture.prixUnitaire4}}</span>
+                </dd>
+                <dt><span>Prix Unitaire 5</span></dt>
+                <dd>
+                    <span>{{culture.prixUnitaire5}}</span>
+                </dd>
+                <dt><span>Motif Autre Prix</span></dt>
+                <dd>
+                    <span>{{culture.motifAutrePrix}}</span>
+                </dd>
+                <dt><span>Maj En Attente</span></dt>
+                <dd>
+                    <span>{{culture.majEnAttente}}</span>
+                </dd>
+                <dt><span>Absence Culture Avenir</span></dt>
+                <dd>
+                    <span>{{culture.absenceCultureAvenir}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/culture', culture.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
